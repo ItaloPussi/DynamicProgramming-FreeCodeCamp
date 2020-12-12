@@ -7,45 +7,45 @@
 
 
 // // My solution
-// const canConstruct = (target, wordBank, memo = {}) => {
-//     if(target in memo) return memo[target]
-
-//     for (let word of wordBank){
-//         const targetSplited = target.split(word)
-
-//         if(targetSplited.length === 1) continue
-//         for(part of targetSplited){
-//             if(targetSplited.join('') === '') return true
-//             if(part === '') continue
-//             return canConstruct(part, wordBank, memo)
-//         }
-//     }
-
-//     memo[target] = false
-//     return false
-// }
-
-
-// Instructor's solution
 const canConstruct = (target, wordBank, memo = {}) => {
     if(target in memo) return memo[target]
-    if(target === ''){
-        return true
-    }
 
     for (let word of wordBank){
-        if(target.indexOf(word) === 0){
-            const suffix = target.slice(word.length)
-            if (canConstruct(suffix, wordBank, memo) === true) {
-                memo[target] === true
-                return true
-            }
+        const targetSplited = target.split(word)
+
+        if(targetSplited.length === 1) continue
+        for(part of targetSplited){
+            if(targetSplited.join('') === '') return true
+            if(part === '') continue
+            return canConstruct(part, wordBank, memo)
         }
     }
 
-    memo[target] === false
+    memo[target] = false
     return false
 }
+
+
+// Instructor's solution
+// const canConstruct = (target, wordBank, memo = {}) => {
+//     if(target in memo) return memo[target]
+//     if(target === ''){
+//         return true
+//     }
+
+//     for (let word of wordBank){
+//         if(target.indexOf(word) === 0){
+//             const suffix = target.slice(word.length)
+//             if (canConstruct(suffix, wordBank, memo) === true) {
+//                 memo[target] === true
+//                 return true
+//             }
+//         }
+//     }
+
+//     memo[target] === false
+//     return false
+// }
 
 console.log(canConstruct("banana", ["ba", "pa", "ca", "na"])) // True
 console.log(canConstruct("", ["ba", "pa", "ca", "na"])) // false
