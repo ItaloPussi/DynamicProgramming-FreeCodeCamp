@@ -3,7 +3,7 @@
     string and an array of strings.
 
     Returned a value indicating how many unique ways can we construct the target with the words in the wordBank.
-    return null if there's no way
+    return zero if there's no way
 */
 
 const countConstruct = (target, wordBank, memo = {}) => {
