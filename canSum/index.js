@@ -7,6 +7,7 @@
     You may assume that all input numbers are nonnegative
 */
 
+// Mixed my solution and instructor's solution
 const canSum = (targetSum, numbers, memo = {}) => {
     if(targetSum in memo) return memo[targetSum]
     if(numbers.indexOf(1) != -1) return true
