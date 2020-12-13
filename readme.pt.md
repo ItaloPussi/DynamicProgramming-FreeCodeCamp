@@ -13,7 +13,7 @@ Quer ver a aula e fazer esses exercícios por conta própria? Acesse a lição <
 
 
 ## Contribuindo
-Encontrou algum por? Se sim, sinta-se livre para abrir uma issue.
+Encontrou algum bug? Se sim, sinta-se livre para abrir uma issue.
 
 ## Licença
 [MIT](https://choosealicense.com/licenses/mit/)
